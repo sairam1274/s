@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title><%= content_for?(:title) ? yield(:title) : "Vishwa" %></title>
+  <%= favicon_link_tag '/assets/favicon.ico' %>
+  
+ 
+  <%= stylesheet_link_tag "application" %>
+  <%= csrf_meta_tags %>
+  </head>
+
+  <style type="text/css">
+      .top-bar {
+        height:65px;
+      }
+      .top-bar .name{
+            height:65px;
+
+      }
+      .top-bar-section ul{
+          background: #fff;
+      }
+      .top-bar-section ul li a{
+          color: #585858;
+          font-size: 16px;
+      }
+      .top-bar-section ul li a:hover{
+          color: #73c20e;
+      }
+      .top-bar .toggle-topbar.menu-icon a:hover{
+          background: #fff;
+      }
+  </style>
+  <body>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <nav class="top-bar" data-topbar >
+
+          <ul class="title-area">
+            <!-- Title Area -->
+            <li class="name">
+              
+            </li>
+            <li class="toggle-topbar menu-icon">
+              <a href="#"><span>menu</span></a>
+            </li>
+          </ul>
+
+ 
+          <section class="top-bar-section">
+            <ul class="left">
+              <li class="divider"></li>
+                <li>
+                  <h3>
+                    <a href="/">
+                      <img src="/assets/vishwa.jpeg" width="150px" height="150px"></a>
+                  </h3>
+                </li>
+            </ul>
+
+            <ul class="right">
+              
+              <li class="divider"></li>
+              <li><h3 style="font-family:Open Sans,Helvetica Neue,Helvetica,Helvetica,Arial,sans-serif;"><%= link_to "Home", posts_path %></h3></li>
+              <li class="divider"></li>
+              <li><h3 style="font-family:Open Sans,Helvetica Neue,Helvetica,Helvetica,Arial,sans-serif;"><%= link_to "About Us", about_path %></h3></li>
+              <li class="divider"></li>
+              <li><h3 style="font-family:Open Sans,Helvetica Neue,Helvetica,Helvetica,Arial,sans-serif;"><%= link_to "Careers", careers_path %></h3></li>
+              <li class="divider"></li>
+              <li><h3 style="font-family:Open Sans,Helvetica Neue,Helvetica,Helvetica,Arial,sans-serif;"><%= link_to "Portfolio", portfolio_path %></h3></li>
+              <li class="divider"></li>
+              <li><h3 style="font-family:Open Sans,Helvetica Neue,Helvetica,Helvetica,Arial,sans-serif;"><%= link_to "Jobs", jobs_path%></h3></li>
+              <li class="divider"></li>
+              <li><h3 style="font-family:Open Sans,Helvetica Neue,Helvetica,Helvetica,Arial,sans-serif;"><%= link_to "Contact", contact_path %></h3></li>
+              <li class="divider"></li>
+              <% if user_signed_in? %>
+                <li>
+                  <h5 style="font-family:Open Sans,Helvetica Neue,Helvetica,Helvetica,Arial,sans-serif;">
+                  <%= current_user.email %>
+                  <%= link_to "Sign out", destroy_user_session_path, :method => :delete %></h5>
+                </li>
+              <% else %>
+                <li>
+                  <h3 style="font-family:Open Sans,Helvetica Neue,Helvetica,Helvetica,Arial,sans-serif;">
+                  <%= link_to "Sign up", new_user_registration_path %> 
+                  <%= link_to "Sign in", new_user_session_path %></h3>
+                </li>
+              <% end %>
+              <li class="divider"></li>
+            </ul>
+            
+          </section>
+        </nav>
+        <!-- end Navigation -->
+
+
+        <br>
+        
+
+        
+ 
+
+  <div class="large-12 columns">
+    <div class="row"><br/>
+      <%= yield %>
+    </div>
+  </div>
+
+    <!-- Footer -->
+    <%= render "layouts/footer" %>
+    <!-- End Footer -->
+    
+    
+    <%= javascript_include_tag "application" %>
+  </body>
+</html>

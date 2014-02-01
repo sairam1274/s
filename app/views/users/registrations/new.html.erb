@@ -1,0 +1,152 @@
+<!-- Side Bar -->
+<div class="large-12 columns">
+  <div class="row">
+  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+    <div class="row">
+	  <div class="large-6 columns">
+	    <%= devise_error_messages! %>
+	  </div>
+	</div>
+	
+	<fieldset class="large-12 columns">
+      <legend align="center"><h3>Registration Form</h3></legend>
+    	<div class="row"> 
+		
+			<div class="large-4 columns"> 
+				<label>FirstName</label> 
+				<input type="text" name ="user[firstname]" placeholder="large-12.columns" /> 
+			</div> 
+
+			<div class="large-4 columns"> 
+				<label>SurName</label> 
+				<input type="text"  name ="user[surname]" placeholder="large-4.columns" /> 
+			</div>  
+
+			<div class="large-4 columns"> 
+				<label>Mobile Number</label> 
+				<input type="text"  name ="user[mobileno]"placeholder="large-4.columns" /> 
+			</div> 
+		
+
+		 
+			<div class="large-4 columns"> 
+	
+					<label>Email-Id</label> 
+			
+              <%= f.email_field :email, :autofocus => true %>
+					
+		
+			</div> 
+
+			<div class="large-4 columns">
+		        <label>Password</label>
+		        <%= f.password_field :password %>
+		    </div>
+		
+
+
+		    <div class="large-4 columns">
+		        <label>Confirm Password</label>
+		        <%= f.password_field :password_confirmation %>
+		    </div>
+
+			<div class="large-4 columns"> 
+			  <label>Gender</label> 
+			  
+			  <label for="pokemonRed">Male<input type="radio" name="user[gender]" value="Male" id="pokemonRed"></label> 
+			  <label for="pokemonBlue">Female<input type="radio" name="user[gender]" value="Female" id="pokemonBlue">
+              </label> 
+			</div> 
+
+		    <div class="large-4 columns"> 
+			  <label>Date of Birth</label> 
+	          <input type="text"id="datepicker" name="user[dob]"placeholder="small-9.columns" />
+	        </div> 
+
+	        <div class="large-4 columns"> 
+			  <label>Address</label> 
+			  <textarea placeholder="small-4.columns"  name ="user[address]"></textarea> 
+			</div> 
+		</div> 
+		
+	    
+	    <button type="submit" class="[tiny round success inverse small large]">Register</button>
+	    <button type="submit" class="[tiny round small large]">Sign In</button>
+  <% end %>
+  <%= render "users/shared/links" %>
+  </fieldset>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<form data-abide> 
+	<div class="name-field large-5 columns"> 
+		<label>Your name <small>required</small></label> 
+		<input type="text" required pattern="[a-zA-Z]+"> 
+		<small class="error">Name is required and must be a string.</small> 
+	</div> 
+	<div class="email-field large-5 columns"> 
+		<label>Email <small>required</small></label> 
+		<input type="email" required> 
+		<small class="error">An email address is required.</small> 
+	</div> 
+
+	<div class="password-field large-5 columns"> 
+		<label>Password <small>required</small></label> 
+		<input type="password" id="password" required pattern="password"> 
+		<small class="error">Your password must match the requirements</small> 
+	</div> 
+	<div class="password-confirmation-field large-5 columns"> 
+		<label>Confirm Password <small>required</small></label> 
+		<input type="password" required pattern="password" data-equalto="password"> 
+		<small class="error">The password did not match</small> 
+	</div> 
+</form>
+
+  
+<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.9.1.js"></script>
+<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script>
+
+$(function () {
+           var options = {
+               
+               changeYear: true,
+               yearRange: "-60:+2"
+           }
+           $("#datepicker").datepicker(options);
+       });
+</script>
+
+

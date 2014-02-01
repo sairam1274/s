@@ -1,0 +1,51 @@
+<% @posts.each do |post| %>
+  <div class="large-8 columns">
+    <ul class="example-orbit" data-orbit> 
+      <li> 
+        <img src="<%= post.slide1 %>" alt="slide 1" /> 
+        <div class="orbit-caption"> Caption One. </div> 
+      </li> 
+      <li> 
+        <img src="<%= post.slide2 %>" alt="slide 2" /> 
+        <div class="orbit-caption"> Caption Two. </div> 
+      </li> 
+      <li> 
+        <img src="<%= post.slide3 %>" alt="slide 3"/> 
+        <div class="orbit-caption"> Caption Three. </div> 
+      </li> 
+      <li> 
+        <img src="<%= post.slide4 %>" alt="slide 3"/> 
+        <div class="orbit-caption"> Caption Three. </div> 
+      </li> 
+
+    </ul>
+  </div>
+<% end %>
+
+<div class="row">
+  <div class="large-12 columns">
+    <div class="row">
+    <!-- Thumbnails -->
+      <div class="large-3 small-6 columns">
+        <img src="/assets/26861.jpg" />
+        <h6 class="panel" align="center">Description</h6>
+      </div>
+
+      <div class="large-3 small-6 columns">
+        <img src="/assets/27249.jpg" />
+        <h6 class="panel" align="center">Description</h6>
+      </div>
+
+      <div class="large-3 small-6 columns">
+        <img src="/assets/29338.jpg" />
+        <h6 class="panel" align="center">Description</h6>
+      </div>
+
+      <div class="large-3 small-6 columns">
+        <img src="/assets/32890.jpg" />
+        <h6 class="panel" align="center">Description</h6>
+      </div>
+    <!-- End Thumbnails -->
+    </div>
+  </div>
+</div>
