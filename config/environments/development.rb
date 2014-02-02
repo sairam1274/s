@@ -38,7 +38,7 @@ Vishwa::Application.configure do
   config.assets.debug = true
 
 
-    SITE_URL = "www.maheshwarijagruth.com"
+  SITE_URL = "www.maheshwarijagruth.com"
   
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.perform_deliveries = true

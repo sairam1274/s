@@ -1,11 +1,9 @@
-<h2>Sign in</h2>
-
 <!-- Side Bar -->
 <div class="large-12 columns">
-  <div class="large-5 columns panel">
+  <div class="large-4 columns panel">
+  	<h3 align="center">Sign In</h3><br />
 	<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
         
-
         <div class="row">
 	      <div class="large-6 columns">
 	        <%= devise_error_messages! %>
@@ -13,10 +11,10 @@
 	    </div>
 
 	    <div class="row">
-	      <div class="large-4 columns">
-	        <label class="inline">EMail</label>
+	      <div class="large-3 columns">
+	        <label class="inline">EMail-ID</label>
 	      </div>
-	      <div class="large-8 columns">
+	      <div class="large-9 columns">
 	        <%= f.email_field :email, :autofocus => true %>
 	      </div>
 	    </div>
@@ -24,10 +22,10 @@
 	
 
 	    <div class="row">
-	      <div class="large-4 columns">
+	      <div class="large-3 columns">
 	        <label class="inline">Password</label>
 	      </div>
-	      <div class="large-8 columns">
+	      <div class="large-9 columns">
 	        <%= f.password_field :password %>
 	      </div>
 	    </div>
@@ -42,10 +40,11 @@
 	    </div>
 
 	    <div class="large3 columns">
-	      <button type="submit" class="[tiny round small large]">Sign In</button>
+	      <button type="submit" class="[tiny round small large]">Sign In</button>	  
+	      <%= render "users/shared/links" %>
+
 	    </div>
 	  <% end %>
-	  <%= render "users/shared/links" %>
 
   </div>
 
