@@ -1,7 +1,7 @@
 development:
   adapter: postgresql
   encoding: utf8
-  database: vishwademo
+  database: vishwa
   pool: 5
   username: postgres
   password: maheshwari

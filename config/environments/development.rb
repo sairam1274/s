@@ -47,8 +47,8 @@ Vishwa::Application.configure do
     :address => 'smtp.gmail.com',
     :port => 587,
     :domain => 'www.gmail.com',
-    :user_name => 'rorrails3@gmail.com',
-    :password => 'startserver',
+    :user_name => 'demovishwa@gmail.com',
+    :password => 'vishwa123',
     :authentication => 'plain',
     :enable_starttls_auto => true
   }
