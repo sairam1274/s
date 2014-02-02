@@ -6,6 +6,5 @@ class AddAllToUsers < ActiveRecord::Migration
     add_column :users, :address, :text
     add_column :users, :gender, :string
     add_column :users, :dob, :date
-    add_column :users, :fathername, :string
   end
 end
